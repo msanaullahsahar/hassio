@@ -4,7 +4,6 @@ homeassistant:
   longitude: LongX
   unit_system: metric
   time_zone: timeZone
-  
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 discovery:
