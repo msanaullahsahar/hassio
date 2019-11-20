@@ -2,13 +2,13 @@
 - action:
   - alias: 'Azan'
     data:
-      entity_id: media_player.sahar_google_mini   # replace with your Google Home's id
-      media_content_id: http://192.168.0.13:8123/local/azan.mp3   # replace with your choice of Adhan
+      entity_id: media_player.sahar_google_mini
+      media_content_id: https://www.islamcan.com/audio/adhan/azan2.mp3
       media_content_type: audio/mp3
     service: media_extractor.play_media
   - data:
-      entity_id: media_player.sahar_google_mini   # replace with your Google Home's id
-      volume_level: '0.4'
+      entity_id: media_player.sahar_google_mini
+      volume_level: '0.95'
     service: media_player.volume_set
   alias: Adhan
   trigger:
