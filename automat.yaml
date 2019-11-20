@@ -1,0 +1,26 @@
+# Automation for Azan
+- action:
+  - alias: ''
+    data:
+      entity_id: media_player.sahar_google_mini   # replace with your Google Home's id
+      media_content_id: http://myhomepi.tk:8123/local/azan.mp3   # replace with your choice of Adhan
+      media_content_type: audio/mp3
+    service: media_extractor.play_media
+  - data:
+      entity_id: media_player.sahar_google_mini   # replace with your Google Home's id
+      volume_level: '0.4'
+    service: media_player.volume_set
+  alias: Adhan
+  condition: []
+  id: '1517693010922'
+  trigger:
+    - platform: template
+      value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_fajr"), "%Y-%m-%dT%H:%M:%S")) }}'
+    - platform: template
+      value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_dhuhr"), "%Y-%m-%dT%H:%M:%S")) }}'
+    - platform: template
+      value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_asr"), "%Y-%m-%dT%H:%M:%S")) }}'
+    - platform: template
+      value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_maghrib"), "%Y-%m-%dT%H:%M:%S")) }}'
+    - platform: template
+      value_template: '{{ as_timestamp(strptime(states("sensor.time_date"), "%H:%M, %Y-%m-%d")) == as_timestamp(strptime(states("sensor.islamic_prayer_time_isha"), "%Y-%m-%dT%H:%M:%S")) }}'
