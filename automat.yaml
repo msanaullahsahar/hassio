@@ -3,7 +3,7 @@
   - alias: ''
     data:
       entity_id: media_player.sahar_google_mini   # replace with your Google Home's id
-      media_content_id: http://myhomepi.tk:8123/local/azan.mp3   # replace with your choice of Adhan
+      media_content_id: https://www.islamcan.com/audio/adhan/azan2.mp3
       media_content_type: audio/mp3
     service: media_extractor.play_media
   - data:
