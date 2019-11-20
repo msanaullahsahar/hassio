@@ -1,6 +1,6 @@
 # Automation for Azan
 - action:
-  - alias: ''
+  - alias: 'Azan'
     data:
       entity_id: media_player.sahar_google_mini   # replace with your Google Home's id
       media_content_id: https://www.islamcan.com/audio/adhan/azan2.mp3
