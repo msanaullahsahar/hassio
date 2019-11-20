@@ -10,9 +10,6 @@ discovery:
 media_extractor:
 sun:
 
-http:
-  server_port: 8123
-  
 # Sensors
 sensor:
   - platform: time_date
