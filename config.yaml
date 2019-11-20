@@ -1,0 +1,43 @@
+homeassistant:
+  name: Home
+  latitude: LatX
+  longitude: LongX
+  unit_system: metric
+  time_zone: timeZone
+  
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+discovery:
+media_extractor:
+sun:
+
+http:
+  server_port: 8123
+  
+# Sensors
+sensor:
+  - platform: time_date
+    display_options:
+      - 'time'
+      - 'date'
+      - 'date_time'
+      - 'date_time_iso'
+      - 'time_date'
+      - 'time_utc'
+      - 'beat'
+  - platform: islamic_prayer_times
+    calculation_method: mwl
+    sensors:
+      - fajr
+      - dhuhr
+      - asr
+      - maghrib
+      - isha
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
