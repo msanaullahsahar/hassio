@@ -13,6 +13,11 @@ sun:
 # Sensors
 sensor:
   - platform: time_date
+    display_options:
+      - 'time'
+      - 'date'
+      - 'date_time'
+      - 'time_date'
   - platform: islamic_prayer_times
     calculation_method: mwl
     sensors:
