@@ -10,7 +10,9 @@ Begin {
 	#Write-Warning "You are not running this script as an administrator. Run it again as administrator." ;
 	break
 	}
-	
+$speak = New-Object System.Speech.Synthesis.SpeechSynthesizer
+$speak.Volume = 100
+$Speak.SelectVoice("Microsoft Zira Desktop")	
 $start_time = Get-Date
 Write-Host "`r`n"
 Write-Host "This script will download automation and configuration files." -ForegroundColor Red -BackgroundColor Yellow
@@ -18,6 +20,7 @@ Write-Host "`r`n"
 
 # Remove config file if already present
 Remove-Item configuration.yaml -ErrorAction Ignore
+Remove-Item config.yaml -ErrorAction Ignore
 Remove-Item automation.yaml -ErrorAction Ignore
 
 # Get user's geolocation
@@ -42,19 +45,20 @@ Get-Content config.yaml | Foreach-Object {
 $_.replace('LatX',"$Lat").replace('LongX', "$Lon").replace('timeZone',"$timeX")
 } | Set-Content configuration.yaml
 
-# Remove original config file
-Remove-Item config.yaml -ErrorAction Ignore
-
 # Fetch Automation file from GitHub
 $url = "https://raw.githubusercontent.com/msanaullahsahar/hassio/master/automat.yaml"
 $output = "$PSScriptRoot\automat.yaml"
 Invoke-WebRequest -Uri $url -OutFile $output
 
+[console]::beep(2000,500)
+$speak.Speak("Please type the name of your google speaker.")
 # Ask user for his google home mini name
 $speakerName = Read-Host -Prompt "What is your Google speaker name? If you do not remember your google home mini name, just open Google Home app on your android phone (sorry guys I have an android phone and do not know how to do this on ios) and on the bottom bar, tap on home icon. You will see the device name under your device icon :`n`n"
 $spkName=$speakerName -replace ' ','_'
-cat automat.yaml | % { $_ -replace "media_player.sahar_google_mini","$spkName" } > automation.yaml
+cat automat.yaml | % { $_ -replace "sahar_google_mini","$spkName" } > automation.yaml
 
+# Remove original config file
+Remove-Item config.yaml -ErrorAction Ignore
 # Remove original automat file
 Remove-Item automat.yaml -ErrorAction Ignore
 
@@ -70,4 +74,5 @@ $MessageIcon = [System.Windows.MessageBoxImage]::Information
 $MessageBody = "Please check your folder for automation.yaml and configuration.yaml files."
 $MessageTitle = "Downloading Completed"
 $Result = [System.Windows.MessageBox]::Show($MessageBody,$MessageTitle,$ButtonType,$MessageIcon)
+$speak.Speak("Please check your folder for automation and configuration files. You may now close your power shell window.")
 }
