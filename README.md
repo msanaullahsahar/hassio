@@ -1,6 +1,6 @@
 # hassio : Configuration and Automation files for HassIO Islamic Prayer
 
-Below are the instructions to download **configuration.yaml** and **automation.yaml** files on a Windows computer
+Below are the instructions to download **configuration.yaml** and **automation.yaml** files with simplest settings on a Windows computer
 
 
 ## Steps
