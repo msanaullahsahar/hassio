@@ -6,7 +6,7 @@ Below are the instructions to download **configuration.yaml** and **automation.y
 ## Steps
 
 1. Make a folder with name **rawFolder** on your desktop
-2. Download a script **[hassFiles.ps1](https://raw.githubusercontent.com/msanaullahsahar/hassio/master/hassFiles.ps1)** and put it in the rawFolder,
+2. Download a script **[makeFiles.ps1](https://raw.githubusercontent.com/msanaullahsahar/hassio/master/makeFiles.ps1)** and put it in the rawFolder,
 2. Run windows Powershell as Administrator.
 3. Change the directory of powershell to **rawFolder** you just created by using the command below.
 
@@ -22,7 +22,7 @@ set-executionpolicy remotesigned
 5. Type the following command in powershell window and Hit Enter Key.
 
 ```
-.\hassFiles.ps1
+.\makeFiles.ps1
 ```
    
 6. Wait for the process to complete.
