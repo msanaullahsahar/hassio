@@ -28,4 +28,6 @@ set-executionpolicy remotesigned
 6. Wait for the process to complete.
 7. Open your **configuration.yaml** file in HassIO and delete all of its contents, then copy the contents from **configuration.yaml** file that just has been created in your **rawFolder** and paste it in HassIO **configuration.yaml** file.
 8. Do the same for **automation.yaml file**.
-9. Super easy. Isn't it? Report any error if you encounter while using this script at here: [Report Issue](https://github.com/msanaullahsahar/hassio/issues/new)
+9. Restart your PI and you are all set.
+
+Super easy. Isn't it? Report any error if you encounter while using this script at here: [Report Issue](https://github.com/msanaullahsahar/hassio/issues/new)
