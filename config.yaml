@@ -5,11 +5,9 @@ homeassistant:
   unit_system: metric
   time_zone: timeZone
 
-# Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 discovery:
 media_extractor:
-sun:
 
 # Sensors
 sensor:
