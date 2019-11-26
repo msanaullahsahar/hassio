@@ -26,5 +26,6 @@ set-executionpolicy remotesigned
 ```
    
 6. Wait for the process to complete.
-7. Super easy. Isn't it?
-8. Report any error if you encounter while using this script at here: [Report Issue](https://github.com/msanaullahsahar/hassio/issues/new)
+7. Open your **configuration.yaml** file in HassIO and delete all of its contents, then copy the contents from **configuration.yaml** file that just has been created in your **rawFolder** and paste it in HassIO **configuration.yaml** file.
+8. Do the same for **automation.yaml file**.
+9. Super easy. Isn't it? Report any error if you encounter while using this script at here: [Report Issue](https://github.com/msanaullahsahar/hassio/issues/new)
